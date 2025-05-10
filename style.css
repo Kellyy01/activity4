@@ -216,7 +216,7 @@ body {
 }
 
 .btn-checkout {
-    background: linear-gradient(135deg, var(--primary-brown), var(--secondary-white));
+    background: linear-gradient(135deg, var(--primary-pink), var(--secondary-violet));
     border: none;
     color: white;
     padding: 10px 20px;

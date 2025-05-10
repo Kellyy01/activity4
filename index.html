@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta="viewport" content="width=device width, initial-scale=1.0">
+<title>Activity 4</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="showAlert('Home')">Coffee Kelly</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showAlert('Home')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showAlert('Products')">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showAlert('About')">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showAlert('Contact')">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <input class="form-control search-box me-2" type="search" placeholder="Search products...">
+                    <div class="cart-icon" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar Filters -->
+            <div class="col-lg-3 mb-4">
+                <div class="sidebar">
+                    <h5 class="sidebar-title">Categories</h5>
+                    <div class="filter-section">
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none" onclick="showAlert('non-Coffee')">non-Coffee</a></li>
+                            <li><a href="#" class="text-decoration-none" onclick="showAlert('Coffee')">Coffee</a></li>
+                            <li><a href="#" class="text-decoration-none" onclick="showAlert('Snacks')">Snacks</a></li>
+                            <li><a href="#" class="text-decoration-none" onclick="showAlert('Pastry')">Pastry</a></li>
+                        </ul>
+                    </div>
+                    
+                    <h5 class="sidebar-title">Price</h5>
+                    <div class="filter-section">
+                        <div class="price-range">
+                            <input type="number" class="price-input" placeholder="Min" id="minPrice">
+                            <input type="number" class="price-input" placeholder="Max" id="maxPrice">
+                        </div>
+                    </div>
+                    
+                    <h5 class="sidebar-title">Menu</h5>
+                    <div class="filter-section">
+                        <div class="brand-checkbox">
+                            <input type="checkbox" id="non-Coffee" checked>
+                            <label for="non-Coffee">non-Coffee</label>
+                        </div>
+                        <div class="brand-checkbox">
+                            <input type="checkbox" id="Coffee" checked>
+                            <label for="Coffee">Coffee</label>
+                        </div>
+                        <div class="brand-checkbox">
+                            <input type="checkbox" id="Snacks" checked>
+                            <label for="Snacks">Snacks</label>
+                        </div>
+                        <div class="brand-checkbox">
+                            <input type="checkbox" id="Pastry" checked>
+                            <label for="Pastry">Pastry</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Grid -->
+            <div class="col-lg-9">
+                <div class="row">
+                  <!-- Updated Product 1 -->
+<div class="col-md-6 col-lg-4 col-xl-3">
+    <div class="card product-card">
+        <div class="product-img">
+            <img src="475267469_623966360022436_6202801504262469911_n.jpg" alt="Matcha Latte">
+        </div>
+        <div class="quick-view" onclick="showAlert('View Details for matcha latte')">View Details</div>
+        <div class="product-body">
+            <h5 class="product-title">Matcha Latte</h5>
+            <div class="product-price">PHP 120</div>
+            <button class="btn btn-add-to-cart" onclick="addToCart('Matcha Latte', 120)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<!-- Updated Product 2 -->
+<div class="col-md-6 col-lg-4 col-xl-3">
+    <div class="card product-card">
+        <div class="product-img">
+            <img src="460676214_1161663574893736_7948982407606434708_n.jpg" alt="Spanish Latte">
+        </div>
+        <div class="quick-view" onclick="showAlert('View Details for Spanish Latte')">View Details</div>
+        <div class="product-body">
+            <h5 class="product-title">Spanish Latte</h5>
+            <div class="product-price">PHP 125</div>
+            <button class="btn btn-add-to-cart" onclick="addToCart('Spanish Latte',125)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<!-- Updated Product 3 -->
+<div class="col-md-6 col-lg-4 col-xl-3">
+    <div class="card product-card">
+        <div class="product-img">
+            <img src="451849260_1674019120014554_6626031845142709619_n.jpg" alt="French Fries">
+        </div>
+        <div class="quick-view" onclick="showAlert('View Details for French Fries')">View Details</div>
+        <div class="product-body">
+            <h5 class="product-title">French Fries</h5>
+            <div class="product-price">PHP 80</div>
+            <button class="btn btn-add-to-cart" onclick="addToCart('French Fries', 80)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<!-- Updated Product 4 -->
+<div class="col-md-6 col-lg-4 col-xl-3">
+    <div class="card product-card">
+        <div class="product-img">
+            <img src="651167861042035_5351171210095017387_n.jpg" alt="Cookies">
+        </div>
+        <div class="quick-view" onclick="showAlert('View Details for Choco Chip Cookie')">View Details</div>
+        <div class="product-body">
+            <h5 class="product-title">Choco Chip Cookie</h5>
+            <div class="product-price">PHP 60</div>
+            <button class="btn btn-add-to-cart" onclick="addToCart('Choco Chip Cookie', 599)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<!-- Updated Product 5 -->
+<div class="col-md-6 col-lg-4 col-xl-3">
+    <div class="card product-card">
+        <div class="product-img">
+            <img src="475982395_817753177170810_3229075006014300124_n.jpg" alt="Strawberry Latte">
+        </div>
+        <div class="quick-view" onclick="showAlert('View Details for Strawberry Latte')">View Details</div>
+        <div class="product-body">
+            <h5 class="product-title">Strawberry-Latte</h5>
+            <div class="product-price">PHP 120</div>
+            <button class="btn btn-add-to-cart" onclick="addToCart('Strawberry-Latte', 120)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<!-- Updated Product 6 -->
+<div class="col-md-6 col-lg-4 col-xl-3">
+    <div class="card product-card">
+        <div class="product-img">
+            <img src="482765825_2455355891476426_3697011090454562707_n.jpg" alt="Dark MOcha">
+        </div>
+        <div class="quick-view" onclick="showAlert('View Details for Dark Mocha')">View Details</div>
+        <div class="product-body">
+            <h5 class="product-title">Dark Mocha</h5>
+            <div class="product-price">PHP 130</div>
+            <button class="btn btn-add-to-cart" onclick="addToCart('Dark Mocha',130)">Add to cart</button>
+        </div>
+    </div>
+</div>
+
+<!-- Updated Product 7 -->
+<div class="col-md-6 col-lg-4 col-xl-3">
+    <div class="card product-card">
+        <div class="product-img">
+            <img src="482625619_651167861042035_5351171210095017387_n.jpg" alt="Nachos">
+        </div>
+        <div class="quick-view" onclick="showAlert('View Details for Nachos')">View Details</div>
+        <div class="product-body">
+            <h5 class="product-title">Nachos</h5>
+            <div class="product-price">PHP 150</div>
+            <button class="btn btn-add-to-cart" onclick="addToCart('Nachos', 150)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<!-- Updated Product 8 -->
+<div class="col-md-6 col-lg-4 col-xl-3">
+    <div class="card product-card">
+        <div class="product-img">
+            <img src="449356118_1538579723706840_2461391351823181019_n.jpg" alt="Brownie">
+        </div>
+        <div class="quick-view" onclick="showAlert('View Details for Brownie')">View Details</div>
+        <div class="product-body">
+            <h5 class="product-title">Brownie</h5>
+            <div class="product-price">PHP 60</div>
+            <button class="btn btn-add-to-cart" onclick="addToCart('Brownies', 60)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <nav aria-label="Page navigation" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Your Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="cartItems">
+                    <p>Your cart is empty</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="w-100 d-flex justify-content-between align-items-center">
+                        <div class="cart-total">Total: PHP<span id="cartTotal">0.00</span></div>
+                        <button class="btn btn-checkout" onclick="checkout()">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
